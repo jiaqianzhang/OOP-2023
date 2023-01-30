@@ -3,11 +3,11 @@ package ie.tudublin;
 public class Main
 {
 
-	public static void helloProcessing()
-	{
-		String[] a = {"MAIN"};
-        processing.core.PApplet.runSketch( a, new HelloProcessing());
-    }
+	// public static void helloProcessing()
+	// {
+	// 	String[] a = {"MAIN"};
+    //     processing.core.PApplet.runSketch( a, new HelloProcessing());
+    // }
 
 	public static void main(String[] args)
 	{
@@ -17,7 +17,16 @@ public class Main
 		penny.setName("Penny");
 		penny.speak();
 
-		helloProcessing();
+		Cat ginger = new Cat();
+		int numLives = ginger.getNumlives();
+		for (int i = 0; i < (numLives + 1); i++)
+		{
+			ginger.kill();
+		}
+
+
+
+		//helloProcessing();
 	}
 	
 }

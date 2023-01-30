@@ -25,7 +25,7 @@ public class Cat
 		}
 		else if (numLives == 0)
 		{
-			System.out.println("Dead");
+			System.out.println("Dead!");
 		}
 	}
 }
