@@ -2,12 +2,15 @@ package ie.tudublin;
 
 import processing.core.PApplet;
 
-public class BugZap extends PApplet {
-	public void settings() {
+public class BugZap extends PApplet 
+{
+	public void settings() 
+	{
 		size(1000, 1000);
 	}
 
-	public void setup() {
+	public void setup() 
+	{
 		reset();
 	}
 
@@ -21,18 +24,21 @@ public class BugZap extends PApplet {
 
 	int score = 0;
 
-	void reset() {
+	void reset() 
+	{
 		resetBug();
 		playerX = width / 2;
 		playerY = height - 50;
 	}
 
-	void resetBug() {
+	void resetBug() 
+	{
 		bugX = random(halfBugWidth, width - halfBugWidth);
 		bugY = 50;
 	}
 
-	void drawBug(float x, float y) {
+	void drawBug(float x, float y) 
+	{
 		// Draw the bug
 		stroke(255);
 		float saucerHeight = bugWidth * 0.7f;
@@ -54,7 +60,8 @@ public class BugZap extends PApplet {
 
 	}
 
-	void drawPlayer(float x, float y, float w) {
+	void drawPlayer(float x, float y, float w) 
+	{
 		stroke(255);
 		float playerHeight = w / 2;
 		line(x - halfPlayerWidth, y + playerHeight, x + halfPlayerWidth, y + playerHeight);
@@ -71,15 +78,20 @@ public class BugZap extends PApplet {
 
 	}
 
-	public void keyPressed() {
+	public void keyPressed() 
+	{
 		
-		if (keyCode == LEFT) {
-			if (playerX > halfPlayerWidth) {
+		if (keyCode == LEFT) 
+		{
+			if (playerX > halfPlayerWidth) 
+			{
 				playerX -= playerSpeed;
 			}
 		}
-		if (keyCode == RIGHT) {
-			if (playerX < width - halfPlayerWidth) {
+		if (keyCode == RIGHT) 
+		{
+			if (playerX < width - halfPlayerWidth) 
+			{
 				playerX += playerSpeed;
 			}
 		}
@@ -98,13 +110,17 @@ public class BugZap extends PApplet {
 		}
 	}
 
-	void moveBug() {
-		if ((frameCount % 30) == 0) {
+	void moveBug() 
+	{
+		if ((frameCount % 30) == 0) 
+		{
 			bugX += random(-5, 5);
-			if (bugX < halfBugWidth) {
+			if (bugX < halfBugWidth) 
+			{
 				bugX = halfBugWidth;
 			}
-			if (bugX > width - halfBugWidth) {
+			if (bugX > width - halfBugWidth) 
+			{
 				bugX = width - halfBugWidth;
 			}
 			bugY += 2;
@@ -113,7 +129,8 @@ public class BugZap extends PApplet {
 
 	int gameMode = 0;
 
-	public void draw() {
+	public void draw() 
+	{
 		background(0);
 		fill(255);
 		text("Score: " + score, 50, 100);
@@ -136,6 +153,5 @@ public class BugZap extends PApplet {
 		{
 			gameMode = 1;
 		}
-
 	}
 }
