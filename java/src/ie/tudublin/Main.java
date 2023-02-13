@@ -29,7 +29,8 @@ public class Main
 		penny.setName("Penny");
 		penny.speak();
 
-		loops();
+		// loops();
+		StarMap();
 	}
 	
 }
