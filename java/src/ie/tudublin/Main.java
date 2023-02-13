@@ -38,7 +38,6 @@ public class Main
 		penny.speak();
 
 		StarMap();
-
 	}
 	
 }
