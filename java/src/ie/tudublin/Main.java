@@ -1,5 +1,7 @@
 package ie.tudublin;
 
+import processing.core.PApplet;
+
 public class Main
 {
 
@@ -35,12 +37,8 @@ public class Main
 		penny.setName("Penny");
 		penny.speak();
 
-<<<<<<< HEAD
-		// loops();
 		StarMap();
-=======
-		starMap();
->>>>>>> ea4cc02c167cb9585d0212a5e7ea7d47f2d6c158
+
 	}
 	
 }

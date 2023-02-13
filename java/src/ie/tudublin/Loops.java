@@ -34,9 +34,17 @@ public class Loops extends PApplet
 		switch(mode)
 		{
 			case 0:
-				int numCircles = 10;
+				int numCircles = 10; // drawing circles
+				// d for diameter is width of the screen dived by the length of the screen
+				// int divide by int will get an int
+				// prevent this to get a float we initialise it to float
+				float d = width / (float)numCircles;
 				for (int i = 0; i < numCircles; i++)
 				{
+					float x = (d * 0.5f) + (d * i); // half the diameter + d * i, gives me x value of where we are putting the circle
+					float y = height / 2; // height of the screen / 2
+					circle(x, y, d);
+
 					
 				}
 				break;

@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-package ie.tudublin;
-
-public class StarMap 
-{
-    
-
-    
-}
-=======
 package ie.tudublin;
 
 import processing.core.PApplet;
@@ -19,7 +9,8 @@ public class StarMap extends PApplet
 		size(500, 500);
 	}
 
-	public void setup() {
+	public void setup()
+	{
 		colorMode(HSB);
 		background(0);
 
@@ -27,10 +18,13 @@ public class StarMap extends PApplet
 		
 	}
 
-		
+	public void drawGrid()
+	{
+
+	}
+
 	public void draw()
 	{	
 		strokeWeight(2);		
 	}
 }
->>>>>>> ea4cc02c167cb9585d0212a5e7ea7d47f2d6c158
