@@ -53,6 +53,11 @@ public class BugZap extends PApplet
 		line(x, y - halfPlayer, x, y - halfPlayer * 2);
 		
 	}
+	
+	void drawBug()
+	{
+
+	}
 
 	// public makes the method visible outside the class
 	// function to move the player, gets called automatically by the superclass when a key is pressed
@@ -65,22 +70,30 @@ public class BugZap extends PApplet
 		// moving the player
 		if (keyCode == LEFT) // keycode is for the left and right key
 		{
+			System.out.println("left arrow pressed");
 			playerX--;
 		}
 
 		if (keyCode == RIGHT)
 		{
+			System.out.println("Right arrow pressed");
 			playerX++;
 		}
 
 		// shooting in the game
 		if (key == ' ')
 		{
+			System.out.println("space key pressed");
 			line(playerX, playerY - halfPlayer, playerX, 0); // 0 makes it go all the way up to the screen
 		}
 
 	}
-	
+
+	void moveBug()
+	{
+
+	}
+
 	public void draw()
 	{
 		background(0); // clear the background to prevent the keycode ...
