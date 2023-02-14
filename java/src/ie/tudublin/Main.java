@@ -2,7 +2,6 @@ package ie.tudublin;
 
 public class Main
 {
-
 	public static void helloProcessing()
 	{
 		String[] a = {"MAIN"};
@@ -31,5 +30,4 @@ public class Main
 
 		loops();
 	}
-	
 }
