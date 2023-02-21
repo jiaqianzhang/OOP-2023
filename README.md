@@ -42,6 +42,73 @@ Resources
 - https://github.com/skooter500/OOP_Labtest1_2017_Starter
 - https://github.com/skooter500/OOP-LabTest1-2016
 
+# Week 5 - Digital Audio 1
+- [Recording of the class](https://tudublin-my.sharepoint.com/personal/bryan_duggan_tudublin_ie/_layouts/15/stream.aspx?id=%2Fpersonal%2Fbryan%5Fduggan%5Ftudublin%5Fie%2FDocuments%2FRecordings%2FOOP%2D20230220%5F110528%2DMeeting%20Recording%2Emp4&ga=1)
+
+# Week 4
+- [Recoding of the class](https://tudublin-my.sharepoint.com/:v:/g/personal/bryan_duggan_tudublin_ie/ESgtwCRYdVpEu2R8RmRUJMQBZA1XDVfpVZrfLEhVDeOaBg?e=23d7az) 
+- I have decided to *keep* the word guys as a gender inclusive term as there is currently no good alternative
+
+- [Recording of the tutorial](https://tudublin-my.sharepoint.com/:v:/g/personal/bryan_duggan_tudublin_ie/EZ2psbF11CBBuUnuCHCWbjsB8JFIrTLht2xtaH596LGwdA?e=Co3nBE)
+
+## Lab 
+- Update the master branches of your repos to the code we worked on in Monday's class
+	```
+	git checkout master
+	git pull upstream master
+	```
+
+- Create a branch for your work today
+	```
+	git checkout -b lab4
+	```
+- Do some work on [the lab test from 2016](https://github.com/skooter500/OOP-LabTest1-2016/blob/master/readme.md). We started this in Monday's class, so you have some starter code.
+	- Create the Star class
+	- Load from the csv file into an ArrayList of Star objects
+	- Plot the stars to the grid
+
+- This is how you can load the file into an ArrayList of Star objects:
+
+	```Java
+	void loadStars()
+		{
+			Table table = loadTable("HabHYG15ly.csv", "header");
+			for(TableRow r:table.rows())
+			{
+				Star s = new Star(r);
+				stars.add(s);
+			}
+		}
+	```
+- You can make Constructors for Star class like this:
+
+	```Java
+	public Star(TableRow tr)
+		{
+			this(
+				tr.getInt("Hab?") == 1, 
+				tr.getString("Display Name"), 
+				tr.getFloat("Distance"),
+				tr.getFloat("Xg"),
+				tr.getFloat("Yg"),
+				tr.getFloat("Zg"),
+				tr.getFloat("AbsMag")
+			);
+		}
+		
+		public Star(boolean hab, String displayName, float distance, float xG, float yG, float zG, float absMag) {
+			this.hab = hab;
+			this.displayName = displayName;
+			this.distance = distance;
+			this.xG = xG;
+			this.yG = yG;
+			this.zG = zG;
+			this.absMag = absMag;
+		}
+	```
+- Commit and push your changes to the repo
+- Submit the URL to your repo via [this form](https://forms.office.com/Pages/ResponsePage.aspx?id=yxdjdkjpX06M7Nq8ji_V2ou3qmFXqEdGlmiD1Myl3gNUNzFGRTJMUzNKVkoxRUZGNUE1VUE2WTZBQy4u)
+
 # Week 3
 - No class because of the bank holiday
 - Lots of amazing things happened in tech!
