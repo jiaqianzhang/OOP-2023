@@ -21,9 +21,9 @@ public class StarMap extends PApplet
     // code to draw purple gridlines with label
     void drawGrid()
     {
-        stroke(255, 0, 255); // outline stroke
+        stroke(255, 0, 255); // setting the lines to purple
         textAlign(CENTER, CENTER);
-        textSize(20); // setting text size to 20
+        textSize(200); // setting text size to 20
         // making sure gridlines goes from -5 to 5 parsecs on the x and y axis
         for(int i=-5; i<=5; i++)
         {
