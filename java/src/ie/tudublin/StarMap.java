@@ -22,4 +22,6 @@ public class StarMap extends PApplet
 	{	
 		strokeWeight(2);		
 	}
+
+    
 }
