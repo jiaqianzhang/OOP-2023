@@ -8,13 +8,14 @@ import processing.core.PApplet;
 import processing.data.Table;
 import processing.data.TableRow;
 
-// import processing.data.*;
+import processing.data.*;
 
 // naming the sketch StarMap
 public class StarMap extends PApplet 
 {
     // global array list of star objects
-    // pass a type as a parameter
+    // you pass a type star as a parameter, can only hold star elements
+    // array list is implemented as an array
     ArrayList<Star> stars = new ArrayList<Star>();
     
     public float border;
@@ -28,37 +29,54 @@ public class StarMap extends PApplet
     {
         colorMode(RGB);
         background(0);
+
         smooth();
-        // loadStars(); // calling func loadStars
-        // printStars(); // call func printStars
+        loadStars(); // calling func loadStars
+        printStars(); // call func printStars
 
         // border = width * 0.1f; // setting the border to start from 0.1 on the axis, this leaves space to outlook the entire map
     }
 
-    // code to draw purple gridlines with label
-    // void drawGrid()
-    // {
-    //     stroke(255, 0, 255); // setting the lines to purple
-    //     textAlign(CENTER, CENTER);
-    //     textSize(200); // setting text size to 20
-    //     // making sure gridlines goes from -5 to 5 parsecs on the x and y axis
-    //     for(int i=-5; i<=5; i++)
-    //     {
-    //         // gridlines going from -5 spaces to 5 parsecs on the x and y axis
-    //         float x = map(i, -5, 5, border, width - border);
-    //         line(x, border, x, height - border); // draw line from -5 to 5 vertically to make a grid
-    //         line(border, x, width - border, x); // draw line horizontally from -5 to 5
-    //         fill(255);
-    //         text(i, x, border * 0.5f); // drawing number -5 to 5 on the x axis on the top of the grid
-    //         text(i, border * 0.5f, x); // printing number -5 to 5 on the y axis on the side of the grid
-    //     }
-    // }
+    // prints the contents of the array list after it has been loaded
+    // should make a toString method on the star class to help you do this and call this from setup after loading the data to make sure it gets loaded correctly
+    void printStars()
+    {
+        // for each loop
+        for (int i = 0; i<stars.size(); i++)
+        {
+            // stars.get = brackets when dealing with array lists
+            // java doesn't feature operating overloading so this special feature is needed
+            println(stars.get(i)); // return star at position i
+        }
 
+        // for(Star s:stars)
+        // {
+        //     System.out.println(s);
+        // }
+    }
+
+    public void displayStars()
+    {
+        // for each loop
+        for (int i = 0; i<stars.size(); i++)
+        {
+            stars.get(i).render(this);; // this is a pointer in the rapplet itself
+        }
+
+        // iliterate and draw the stars in the array
+        // for(Star s:stars)
+        // {
+        //     s.render(this);
+        // }
+    }
+
+    // code to call all the constructor chaining from Star
     // load the file into an array list of star objects
     // load data from the file and populates the arraylist
     void loadStars()
     {
         Table table = loadTable("HabHYG15ly.csv", "header"); // loading data from file
+        // for each loop
         for(TableRow r:table.rows()) //populates the array list
         {
             Star s = new Star(r);
@@ -88,9 +106,9 @@ public class StarMap extends PApplet
     // build in function
     float map1(float a, float b, float c, float d, float e)
     {
-        float r1 = c - b;
-        float r2 = e - d;
-        float distance = a - b;
+        float r1 = c-b;
+        float r2 = e-d;
+        float distance = a-b;
 
         return d +((distance / r1) * r2);
     }
@@ -100,17 +118,8 @@ public class StarMap extends PApplet
 		strokeWeight(1);
 		
 		drawGrid();
+        displayStars();
 	}
-
-    // prints the contents of the array list after it has been loaded
-    // should make a toString method on the star class to help you do this and call this from setup after loading the data to make sure it gets loaded correctly
-    // void printStars()
-    // {
-    //     for(Star s:stars)
-    //     {
-    //         System.out.println(s);
-    //     }
-    // }
 
 
     // Star first = null; // first star
@@ -146,14 +155,6 @@ public class StarMap extends PApplet
     // }
 
 
-    // public void drawStars()
-    // {
-    //     // iliterate and draw the stars in the array
-    //     for(Star s:stars)
-    //     {
-    //         s.render(this);
-    //     }
-    // }
 
     // drawing the whole star map out
     // public void draw() 

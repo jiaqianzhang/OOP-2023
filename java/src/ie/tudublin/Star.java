@@ -14,10 +14,9 @@ public class Star
     private float zG;
     private float absMag;
 
-
-    @Override
     // making a toString method to help to print the contents of the array
     // this should be called from setup after you load the data
+    @Override
     public String toString() 
     {
         return "Star [absMag=" + absMag + ", displayName=" + displayName + ", distance=" + distance + ", hab=" + hab + ", xG=" + xG + ", yG=" + yG + ", zG=" + zG + "]";
@@ -28,9 +27,10 @@ public class Star
     // tb represent a single row of data values srtoed in columns from a table
     public Star(TableRow tr)
     {
+        // constructor chaining
         this
         (
-            tr.getInt("Hab?") == 1, 
+            tr.getInt("Hab?") == 1, // to evaluate
             tr.getString("Display Name"), 
             tr.getFloat("Distance"),
             tr.getFloat("Xg"),
@@ -123,20 +123,25 @@ public class Star
     }
 
     // plotting the stars onto the grid
-    public void render(StarMap pa)
+    public void render(StarMap p)
     {
-        float x = PApplet.map(xG, -5, 5, pa.border, pa.width - pa.border); // use Xg value
-        float y = PApplet.map(yG, -5, 5, pa.border, pa.height - pa.border); // use Yg value
+        // final method is when a variable cannot be changed
+        // static method is a variable that can be called without creating a object within a class
+        float border = p.width * 0.1f;
+        float x = PApplet.map(xG, -5, 5, border, p.width - border); // use Xg value
+        float y = PApplet.map(yG, -5, 5, border, p.height - border); // use Yg value
 
-        pa.stroke(255, 255, 0);
-        pa.line(x, y-5, x, y+5);
-        pa.line(x-5, y, x + 5, y);
-        pa.stroke(255, 0, 0);
-        pa.noFill();
-        pa.circle(x, y, absMag);
-        pa.fill(255);
-        pa.textSize(16);
-        pa.textAlign(PApplet.LEFT, PApplet.CENTER);
-        pa.text(displayName, x + 20, y);
+        // for line
+        p.stroke(255, 255, 0); // yellow
+        p.line(x, y-5, x, y+5);
+        p.line(x-5, y, x+5, y);
+        // for circle
+        p.stroke(255, 0, 0); // red
+        p.circle(x, y, absMag);
+        p.fill(255);
+        p.textAlign(PApplet.LEFT, PApplet.CENTER);
+        p.textSize(16);
+        p.text(displayName, x+20, y);
+        p.noFill();
     }
 }
