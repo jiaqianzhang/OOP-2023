@@ -1,7 +1,5 @@
 package ie.tudublin;
 
-import ddf.minim.Minim;
-
 import ddf.minim.AudioBuffer;
 import ddf.minim.AudioInput;
 import ddf.minim.AudioPlayer;
@@ -21,20 +19,25 @@ public class Audio1 extends PApplet
     float smoothedY = 0;
     float smoothedAmplitude = 0;
 
-    // public void keyPressed() 
-    // {
-	// 	if (key >= '0' && key <= '9') {
-	// 		mode = key - '0';
-	// 	}
-	// 	if (keyCode == ' ') {
-    //         if (ap.isPlaying()) {
-    //             ap.pause();
-    //         } else {
-    //             ap.rewind();
-    //             ap.play();
-    //         }
-    //     }
-	// }
+    public void keyPressed() 
+    {
+		if (key >= '0' && key <= '9') 
+        {
+			mode = key - '0';
+		}
+		if (keyCode == ' ') 
+        {
+            if (ap.isPlaying()) 
+            {
+                ap.pause();
+            } 
+            else 
+            {
+                ap.rewind();
+                ap.play();
+            }
+        }
+	}
 
     public void settings()
     {
@@ -57,7 +60,7 @@ public class Audio1 extends PApplet
         smooth();
 
         // And comment the next two lines out
-        // ap = minim.loadFile("heroplanet.mp3", 1024);
+        // ap = minim.loadFile("heroplanet.wav", 1024);
         // ap.play();
         // ab = ap.mix;
 
@@ -76,21 +79,24 @@ public class Audio1 extends PApplet
         // maths way to add colours
         float cgap = 255 / (float)ab.size();
 
-        // float average = 0;
-        // float sum = 0;
-        // off += 1;
+        float total = 0;
 
         // for loop to microphone sound
         for(int i=0; i<ab.size(); i++)
         {
+            total += abs(ab.get(i));
             // change stroke colours using maths way
             stroke(cgap * i, 255, 255);
             line(i, half, i, half + ab.get(i) * half); // making audio wave bigger by *
-            // sum += abs(ab.get(i));
         }
-        // average= sum / (float) ab.size();
 
-        // smoothedAmplitude = lerp(smoothedAmplitude, average, 0.1f);
+        float average = total/(float)ab.size(); // average size of the buffer
+        
+        float r = average * 200;
+        lerpedR = lerp(lerpedR, r, 0.1f);
+
+        circle(100, 200, lerpedR); // circle becomes bigger when theres more sound
+
         
         // float cx = width / 2;
         // float cy = height / 2;
@@ -113,9 +119,6 @@ public class Audio1 extends PApplet
 
         // }
         
-
-
-        
         // Other examples we made in the class
         /*
         stroke(255);
@@ -129,5 +132,7 @@ public class Audio1 extends PApplet
         circle(200, smoothedY, 50);
         */
 
-    }        
+    }
+    
+    float lerpedR = 0;
 }
