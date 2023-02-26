@@ -10,7 +10,6 @@ import processing.data.TableRow;
 
 import processing.data.*;
 
-// naming the sketch StarMap
 public class StarMap extends PApplet 
 {
     // global array list of star objects
@@ -75,9 +74,8 @@ public class StarMap extends PApplet
     // load data from the file and populates the arraylist
     void loadStars()
     {
-        Table table = loadTable("HabHYG15ly.csv", "header"); // loading data from file
-        // for each loop
-        for(TableRow r:table.rows()) //populates the array list
+        Table table = loadTable("HabHYG15ly.csv", "");
+        for(TableRow r:table.rows())
         {
             Star s = new Star(r);
             stars.add(s);

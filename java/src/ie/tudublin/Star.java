@@ -27,10 +27,8 @@ public class Star
     // tb represent a single row of data values srtoed in columns from a table
     public Star(TableRow tr)
     {
-        // constructor chaining
-        this
-        (
-            tr.getInt("Hab?") == 1, // to evaluate
+        this(
+            tr.getInt("Hab?") == 1, 
             tr.getString("Display Name"), 
             tr.getFloat("Distance"),
             tr.getFloat("Xg"),
@@ -40,7 +38,6 @@ public class Star
         );
     }
     
-    // make constructor for star class like this
     public Star(boolean hab, String displayName, float distance, float xG, float yG, float zG, float absMag) 
     {
         this.hab = hab;
