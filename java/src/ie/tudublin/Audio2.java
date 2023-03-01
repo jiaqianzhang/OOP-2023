@@ -70,9 +70,6 @@ public class Audio2 extends PApplet{
         lerpedY = lerp(lerpedY, y, 0.1f);
         circle(200, y, 50);
         circle(300, lerpedY, 50);
-        
-
-
 
         //println(map(5, 2, 10, 1000, 2000));
         //println(map1(5, 2, 10, 1000, 2000));
