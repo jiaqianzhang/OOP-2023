@@ -12,7 +12,7 @@ public class PitchSpeller
 
         for(int i=0; i<frequencies.length; i++)
         {
-            float diff = Math.abs(frequency - frequencies[i])
+            float diff = Math.abs(frequency - frequencies[i]);
             if (diff < minDiff)
             {
                 minDiff = diff;

@@ -120,9 +120,6 @@ public class Audio1 extends PApplet
             }
             break;          
         }
-
-
-        
         // Other examples we made in the class
         /*
         stroke(255);
@@ -135,6 +132,5 @@ public class Audio1 extends PApplet
         smoothedY = lerp(smoothedY, y, 0.1f);        
         circle(200, smoothedY, 50);
         */
-
-    }        
+    }
 }
