@@ -2,7 +2,8 @@ package ie.tudublin;
 
 import processing.core.PApplet;
 
-public class Cube {
+public class Cube 
+{
     public float x, y;
     public float size;
     public float c;
