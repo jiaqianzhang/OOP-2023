@@ -30,7 +30,7 @@ public class LifeBoard
         int count = 0;
         for(int i=-1; i<=1; i++)
         {
-            for(int j=0; j<=1; j++)
+            for(int j=-1; j<=1; j++)
             {
                 if (!(i==0 && j==0))
                 {
@@ -62,7 +62,7 @@ public class LifeBoard
                 int count = countCells(row, col);
                 if(board[row][col])
                 {
-                    if(count ==2 && count ==3)
+                    if(count ==2 || count ==3)
                     {
                         next[row][col] = true; // live
                     }
