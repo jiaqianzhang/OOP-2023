@@ -2,7 +2,8 @@ package ie.tudublin;
 
 import processing.core.PApplet;
 
-public class LifeBoard {
+public class LifeBoard 
+{
     boolean[][] board;
     boolean[][] next;
     
@@ -30,9 +31,9 @@ public class LifeBoard {
         {
             for (int j = -1 ; j <= 1 ; j ++)
             {
-                if (! (i == 0) && (j == 0))
+                if (! (i==0 && j==0))
                 {
-                    if (getCell(i, j))
+                    if (getCell(row+i, col+j))
                     {
                         count ++;
                     }
@@ -59,7 +60,6 @@ public class LifeBoard {
                     {
                         next[row][col] = false;
                     }
-                    
                 }
                 else
                 {
@@ -78,7 +78,8 @@ public class LifeBoard {
                 // dead with 3 neighboiurs comes to life
             }
         }
-        boolean[][] temp = board;
+        boolean[][] temp;
+        temp = board;
         board = next;
         next = temp;
     }
