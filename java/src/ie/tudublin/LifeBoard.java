@@ -32,13 +32,12 @@ public class LifeBoard
         {
             for(int j=0; j<=1; j++)
             {
-                if (!(i==0) && (j==0))
+                if (!(i==0 && j==0))
                 {
-                    if(getCell(i, j))
+                    if(getCell(row+i, row+j))
                     {
                         count++;
                     }
-
                 }
             }
         }
@@ -86,7 +85,8 @@ public class LifeBoard
             }
         }
         // swapping the board
-        boolean[][] temp = board;
+        boolean[][] temp;
+        temp = board;
         board = next;
         next = temp;
     }
@@ -148,6 +148,4 @@ public class LifeBoard
     {
         this.size = size; //size of the board
     }
-
-    
 }
