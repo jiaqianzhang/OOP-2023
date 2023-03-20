@@ -48,6 +48,27 @@ public class Ship
     {
         this.size = size;
     }
+    
+    public float getRot() 
+    {
+        return rot;
+    }
+
+    public void setRot(float rot) 
+    {
+        this.rot = rot;
+    }
+
+    public int getC() 
+    {
+        return c;
+    }
+
+    public void setC(int c) 
+    {
+        this.c = c;
+    }
+
 
     private float rot;
     private int c;
