@@ -12,7 +12,7 @@ public class Ship
     public Ship(float x, float y, float size, int c, PApplet p)
     {
         pos = new PVector(x, y);
-        forward = new PVector(x, y);
+        forward = new PVector(0, -1);
         this.size = size;
         this.halfSize = size/2;
         this.c = c;
@@ -27,26 +27,6 @@ public class Ship
     public void setPos(PVector pos) 
     {
         this.pos = pos;
-    }
-
-    public PApplet getP() 
-    {
-        return p;
-    }
-
-    public void setP(PApplet p) 
-    {
-        this.p = p;
-    }
-
-    public float getSize() 
-    {
-        return size;
-    }
-
-    public void setSize(float size)
-    {
-        this.size = size;
     }
     
     public float getRot() 
@@ -69,6 +49,15 @@ public class Ship
         this.c = c;
     }
 
+    public float getSize() 
+    {
+        return size;
+    }
+
+    public void setSize(float size)
+    {
+        this.size = size;
+    }
 
     private float rot;
     private int c;
