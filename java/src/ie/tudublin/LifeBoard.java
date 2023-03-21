@@ -2,7 +2,8 @@ package ie.tudublin;
 
 import processing.core.PApplet;
 
-public class LifeBoard {
+public class LifeBoard
+{
     boolean[][] board;
     boolean[][] next;
     
@@ -128,11 +129,13 @@ public class LifeBoard {
     }
 
 
-    public int getSize() {
+    public int getSize()
+    {
         return size;
     }
 
-    public void setSize(int size) {
+    public void setSize(int size)
+    {
         this.size = size;
     } 
     

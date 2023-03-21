@@ -66,7 +66,8 @@ public class Ship
 
     public void move()
     {
-        forward.x = PApplet.sin(rot);
+        // maths calculating
+        forward.x = PApplet.sin(rot); // rot is a function in java to rotate
         forward.y = - PApplet.cos(rot);
 
         // keypress is boolean
@@ -98,6 +99,7 @@ public class Ship
     public void render()
     {
         p.pushMatrix();
+
         p.translate(pos.x, pos.y);
         p.rotate(rot); // rotate
         // drawing the ship
@@ -106,6 +108,6 @@ public class Ship
         p.line(0, -halfSize, +halfSize, +halfSize);
         p.line(halfSize, +halfSize, 0, 0);
         p.line(0, 0, -halfSize, halfSize);
+        
         p.popMatrix();
     }
-}
