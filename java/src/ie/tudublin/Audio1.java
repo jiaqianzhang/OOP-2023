@@ -20,13 +20,18 @@ public class Audio1 extends PApplet
     float smoothedAmplitude = 0;
 
     public void keyPressed() {
-		if (key >= '0' && key <= '9') {
+		if (key >= '0' && key <= '9') 
+        {
 			mode = key - '0';
 		}
-		if (keyCode == ' ') {
-            if (ap.isPlaying()) {
+		if (keyCode == ' ') 
+        {
+            if (ap.isPlaying()) 
+            {
                 ap.pause();
-            } else {
+            } 
+            else 
+            {
                 ap.rewind();
                 ap.play();
             }
@@ -35,7 +40,7 @@ public class Audio1 extends PApplet
 
     public void settings()
     {
-        size(1024, 1000, P3D);
+        size(1024, 1000);
         // fullScreen(P3D, SPAN);
     }
 

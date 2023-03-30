@@ -103,7 +103,6 @@ public class YASC extends PApplet
 			b.render();
 			b.move();
 		}
-		
 
 		fill(255);
 		text("Bullets: " + bullets.size(), 50, 50);

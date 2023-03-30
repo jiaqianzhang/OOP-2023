@@ -38,6 +38,7 @@ public class HelloProcessing extends PApplet
 	{	
 		strokeWeight(2);
 		stroke(c, 255, 255);
+		stroke(255);
 		c = (c + 1f) % 255;
 		line(x1, y1, x2, y2);
 

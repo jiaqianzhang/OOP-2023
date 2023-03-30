@@ -3,7 +3,6 @@ package ie.tudublin;
 import java.util.ArrayList;
 
 import ddf.minim.AudioBuffer;
-// import ddf.minim.AudioBuffer;
 import ddf.minim.AudioInput;
 import ddf.minim.AudioPlayer;
 import ddf.minim.Minim;
@@ -42,8 +41,8 @@ public class Audio3 extends PApplet{
 
     public void settings()
     {
-        fullScreen(P3D, SPAN);
-        // size(1024, 1024, P3D);
+        // fullScreen(P3D, SPAN);
+        size(1024, 1000);
     }
 
     public void setup()

@@ -29,7 +29,7 @@ public class Loops extends PApplet
 		background(0);
 		fill(255);
 
-		switch (mode) 
+		switch(mode) 
 		{
 			case 0:
 				int numCircles = (int) max(1, mouseX / 50.0f);
