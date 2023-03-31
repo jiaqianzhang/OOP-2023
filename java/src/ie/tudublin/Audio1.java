@@ -47,7 +47,7 @@ public class Audio1 extends PApplet
         // ab = ai.mix; 
 
         // And comment the next two lines out
-        ap = minim.loadFile("heroplanet.mp3", 1024);
+        ap = minim.loadFile("heroplanet.wav", 1024);
         ap.play();
         ab = ap.mix;
         colorMode(HSB);
