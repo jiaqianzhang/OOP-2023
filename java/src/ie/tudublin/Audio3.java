@@ -48,16 +48,15 @@ public class Audio3 extends PApplet{
     public void setup()
     {
         m = new Minim(this);
-        ap = m.loadFile("tomp3.cc - 08 PsychNerD and Marco G  More Cowbell.mp3", 1024);
-        // i = m.getLineIn(Minim.MONO, width, 44100, 16);
+        ap = m.loadFile("tomp3.cc - 08 PsychNerD and Marco G  More Cowbell.wav", 1024);
+        //ai = m.getLineIn(Minim.MONO, width, 44100, 16);
         ab = ap.mix;
 
         lerpedBuffer = new float[width];
 
-        // fft = new FFT(width, 44100);
+        //fft = new FFT(width, 44100);
 
         createCubes(2);
-
     }
 
     public void createCubes(int numCubes)
